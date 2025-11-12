@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour {
     public Text waveText; // 적 웨이브 표시용 텍스트
     public GameObject gameoverUI; // 게임 오버시 활성화할 UI 
 
+    public Button restartButton; // 재시작 버튼
+
 
     private void Awake()
     {
@@ -32,6 +34,12 @@ public class UIManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+
+
+    private void Start() {
+        // 재시작 버튼에 게임 재시작 함수 연결
+        restartButton.onClick.AddListener(GameRestart);
     }
 
 
